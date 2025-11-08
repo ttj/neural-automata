@@ -6,6 +6,54 @@ Repository for the paper [Neurosymbolic Finite and Pushdown Automata: Improved M
 
 **Reference:** Samuel Sasaki, Diego Manzanas Lopez, and Taylor T. Johnson, Neurosymbolic Finite and Pushdown Automata: Improved Multimodal Reasoning versus Vision Language Models (VLMs), 2nd International Conference on Neuro-symbolic Systems (NeuS 2025), Philadelphia, Pennsylvania, May 2025.
 
+# Quick Start
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run Demonstrations
+
+We provide three comprehensive scripts to help you understand and reproduce the neural automata results:
+
+### 1. Execute Neural Automata (Demo)
+```bash
+python demo_neural_automata.py
+```
+This demonstrates:
+- ✓ Neurosymbolic Finite Automaton (NSFA) for regex matching
+- ✓ Neurosymbolic Pushdown Automaton (NSPDA) for arithmetic evaluation
+- ✓ Visualization of how the automata process images
+
+### 2. Generate Random Examples
+```bash
+python generate_examples.py
+```
+This generates new random examples:
+- ✓ Random string images for regex matching
+- ✓ Random arithmetic expression images
+- ✓ Visualizations of all generated samples
+
+### 3. Visualize Paper Results
+```bash
+python visualize_results.py
+```
+This creates comprehensive visualizations:
+- ✓ Accuracy comparison (NSPDA vs VLMs)
+- ✓ Runtime comparison
+- ✓ Performance breakdown by expression complexity
+- ✓ Summary tables of all results
+
+## Complete Guide
+
+For detailed documentation, see **[NEURAL_AUTOMATA_GUIDE.md](NEURAL_AUTOMATA_GUIDE.md)** which includes:
+- Complete tutorials on using the neural automata
+- How to generate custom examples
+- Understanding the architecture
+- Advanced usage examples
+
 # Reproducibility
 
 To reproduce the results in the NeuS'25 paper, see the `examples/regex` and `examples/simple_math_vlm_comp` folders. Each of these folders will contain the data, models, and scripts necessary to running the experiments. The results shown in the paper are also represented in the `results` subdirectory of each.
