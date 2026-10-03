@@ -1,11 +1,11 @@
-#0 -> sh=accept | sh=accept: 0.0005927085876464844
-#1 -> tg=accept | tb=accept: 0.0005388259887695312
-#2 -> td=accept | td=accept: 0.0006341934204101562
-#3 -> sk=accept | sh=accept: 0.0008618831634521484
-#4 -> ql=accept | ql=accept: 0.0005869865417480469
-#5 -> rbx=reject | rbx=reject: 0.0018641948699951172
-#6 -> xxjfudrbcy=reject | xxifudrbcy=reject: 0.0023169517517089844
-#7 -> nmkc=reject | nmkc=reject: 0.0010042190551757812
-#8 -> lxx=reject | lxx=reject: 0.0008227825164794922
-#9 -> zwbitevid=reject | zwbitevld=reject: 0.0030059814453125
-String Classification Accuracy: 60.0%, Task Accuracy: 100.0%
+#0 -> sh=accept | sh=accept: 0.0012814998626708984
+#1 -> tg=accept | tg=accept: 0.0012912750244140625
+#2 -> td=accept | td=accept: 0.0012052059173583984
+#3 -> sk=accept | sk=accept: 0.0012972354888916016
+#4 -> ql=accept | ql=accept: 0.001302957534790039
+#5 -> rbx=reject | rbx=reject: 0.0018515586853027344
+#6 -> xxjfudrbcy=reject | xxifudrbcy=reject: 0.005829334259033203
+#7 -> nmkc=reject | nmkc=reject: 0.002454996109008789
+#8 -> lxx=reject | lxx=reject: 0.0017886161804199219
+#9 -> zwbitevid=reject | zwbitevid=reject: 0.005216836929321289
+String Classification Accuracy: 90.0%, Task Accuracy: 100.0%

@@ -1,0 +1,42 @@
+{
+  "config": {
+    "regex": "[A-Za-z][A-Za-z]w",
+    "num_train_per_class": 400,
+    "num_val_per_class": 100,
+    "num_test_per_class": 100,
+    "per_image_n_per_class": 50,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "batch_accumulate": 16,
+    "grad_clip_norm": 1.0,
+    "epochs": 20,
+    "learn_delta": true,
+    "delta_init": "from_dfa",
+    "delta_init_scale": 5.0,
+    "regularizer_weights": {
+      "row_entropy": 0.01
+    },
+    "seed": 42,
+    "emnist_root": "data/EMNIST",
+    "data_cache_dir": "experiments/halfb/regime1/_data_cache"
+  },
+  "baseline": {
+    "loss": 1.5483796369191258,
+    "accept_accuracy": 0.5,
+    "top1": 0.01769230769230769,
+    "recovered_n_states": 5,
+    "recovered_n_accepting": 1,
+    "reference_n_states": 5,
+    "language_equivalent": true
+  },
+  "final": {
+    "loss": 0.11111630165949464,
+    "accept_accuracy": 0.975,
+    "top1": 0.038461538461538464,
+    "recovered_n_states": 5,
+    "recovered_n_accepting": 1,
+    "reference_n_states": 5,
+    "language_equivalent": true
+  }
+}

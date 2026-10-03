@@ -1,11 +1,11 @@
-#0 -> mobooooooooooooo=accept | mobdoooooooooooo=reject: 0.007205009460449219
-#1 -> clcoooooooooooo=accept | clcoooooooooooo=accept: 0.003923892974853516
-#2 -> cwroooo=accept | cwroooo=accept: 0.0028998851776123047
-#3 -> fqbooooooooooooooo=accept | fqbooooooooooooooo=accept: 0.00567317008972168
-#4 -> abpoooooooooooo=accept | abpoooooooooooo=accept: 0.004627227783203125
-#5 -> sidzhgexh=reject | sldzhgexh=reject: 0.0023980140686035156
-#6 -> kmfl=reject | kmfl=reject: 0.0009860992431640625
-#7 -> ckarbct=reject | ckarbct=reject: 0.0025908946990966797
-#8 -> udltatzzi=reject | udltatzzi=reject: 0.0020868778228759766
-#9 -> xizrsvfz=reject | xizrsvfz=reject: 0.002192258834838867
-String Classification Accuracy: 80.0%, Task Accuracy: 90.0%
+#0 -> mobooooooooooooo=accept | mobooooooooooooo=accept: 0.008451461791992188
+#1 -> clcoooooooooooo=accept | clcoooooooooooo=accept: 0.0076677799224853516
+#2 -> cwroooo=accept | cwroooo=accept: 0.0038809776306152344
+#3 -> fqbooooooooooooooo=accept | fqbooooooooooooooo=accept: 0.00969696044921875
+#4 -> abpoooooooooooo=accept | abpoooooooooooo=accept: 0.007740974426269531
+#5 -> sidzhgexh=reject | sldzhgexh=reject: 0.0047571659088134766
+#6 -> kmfl=reject | kmfl=reject: 0.002259492874145508
+#7 -> ckarbct=reject | ckarbct=reject: 0.003711223602294922
+#8 -> udltatzzi=reject | udltatzzi=reject: 0.004769325256347656
+#9 -> xizrsvfz=reject | xlzrsvfz=reject: 0.004179954528808594
+String Classification Accuracy: 80.0%, Task Accuracy: 100.0%

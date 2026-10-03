@@ -1,0 +1,11 @@
+#0 -> quw=accept | quw=accept: 0.0009169578552246094
+#1 -> liw=accept | llw=accept: 0.0007879734039306641
+#2 -> fjw=accept | fjw=accept: 0.001528024673461914
+#3 -> qkw=accept | qkw=accept: 0.0009076595306396484
+#4 -> tsw=accept | tsw=accept: 0.0009758472442626953
+#5 -> iyyaswuc=reject | iyyaswuc=reject: 0.002390146255493164
+#6 -> f=reject | f=reject: 0.00036025047302246094
+#7 -> fhllfaqs=reject | fhllfaqs=reject: 0.0018613338470458984
+#8 -> rge=reject | rge=reject: 0.001065969467163086
+#9 -> dvlriwjjbr=reject | dnlriwjdbr=reject: 0.0024199485778808594
+String Classification Accuracy: 80.0%, Task Accuracy: 100.0%

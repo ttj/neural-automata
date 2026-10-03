@@ -1,0 +1,11 @@
+#0 -> amlxvcf=accept | qmlxvcf=reject: 0.0030858516693115234
+#1 -> fmlfhcf=accept | fmlfhcf=accept: 0.0019259452819824219
+#2 -> amliycf=accept | amliycf=accept: 0.0016200542449951172
+#3 -> bmlxpcf=accept | bmixpcf=reject: 0.002619028091430664
+#4 -> fmldecf=accept | fmlbecf=reject: 0.0016391277313232422
+#5 -> oue=reject | cue=reject: 0.0013010501861572266
+#6 -> dzm=reject | dzm=reject: 0.0007319450378417969
+#7 -> cp=reject | cp=reject: 0.0012142658233642578
+#8 -> pefb=reject | pgfb=reject: 0.001013040542602539
+#9 -> yahpc=reject | yahpc=reject: 0.002227783203125
+String Classification Accuracy: 50.0%, Task Accuracy: 70.0%

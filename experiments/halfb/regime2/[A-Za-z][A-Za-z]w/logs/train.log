@@ -1,0 +1,27 @@
+2026-05-14 21:55:45,262 INFO regime2: config: {"batch_accumulate": 16, "data_cache_dir": "experiments/halfb/regime1/_data_cache", "delta_init": "from_dfa", "delta_init_scale": 5.0, "emnist_root": "data/EMNIST", "epochs": 20, "grad_clip_norm": 1.0, "learn_delta": true, "learning_rate": 0.001, "num_test_per_class": 100, "num_train_per_class": 400, "num_val_per_class": 100, "optimizer": "Adam", "per_image_n_per_class": 50, "regex": "[A-Za-z][A-Za-z]w", "regularizer_weights": {"row_entropy": 0.01}, "seed": 42, "weight_decay": 0.0}
+2026-05-14 21:55:45,263 INFO regime2: preparing data...
+2026-05-14 21:55:49,318 INFO regime2: data sizes: train=800 val=200 test=200 per_image=1300
+2026-05-14 21:55:49,334 INFO regime2: learnable params: 424356 delta_logits=(5, 26, 5)
+2026-05-14 21:55:50,938 INFO regime2: baseline: test_loss=1.5484 test_acc=0.500 per_image_top1=0.018 recovered_equiv=True
+2026-05-14 21:55:50,938 INFO regime2: starting training for 20 epochs...
+2026-05-14 21:56:23,073 INFO nsa.learning.trainer: epoch=0 train_loss=0.1514 val_loss=0.1790 val_acc=0.950
+2026-05-14 21:56:58,122 INFO nsa.learning.trainer: epoch=1 train_loss=0.0979 val_loss=0.1788 val_acc=0.950
+2026-05-14 21:57:31,761 INFO nsa.learning.trainer: epoch=2 train_loss=0.0962 val_loss=0.1788 val_acc=0.950
+2026-05-14 21:58:03,580 INFO nsa.learning.trainer: epoch=3 train_loss=0.0947 val_loss=0.1788 val_acc=0.950
+2026-05-14 21:58:35,890 INFO nsa.learning.trainer: epoch=4 train_loss=0.0934 val_loss=0.1789 val_acc=0.950
+2026-05-14 21:59:07,857 INFO nsa.learning.trainer: epoch=5 train_loss=0.0923 val_loss=0.1791 val_acc=0.950
+2026-05-14 21:59:40,329 INFO nsa.learning.trainer: epoch=6 train_loss=0.0913 val_loss=0.1793 val_acc=0.950
+2026-05-14 22:00:12,561 INFO nsa.learning.trainer: epoch=7 train_loss=0.0904 val_loss=0.1795 val_acc=0.950
+2026-05-14 22:00:45,261 INFO nsa.learning.trainer: epoch=8 train_loss=0.0897 val_loss=0.1798 val_acc=0.950
+2026-05-14 22:01:17,727 INFO nsa.learning.trainer: epoch=9 train_loss=0.0890 val_loss=0.1801 val_acc=0.950
+2026-05-14 22:01:51,697 INFO nsa.learning.trainer: epoch=10 train_loss=0.0884 val_loss=0.1803 val_acc=0.950
+2026-05-14 22:02:24,683 INFO nsa.learning.trainer: epoch=11 train_loss=0.0879 val_loss=0.1806 val_acc=0.950
+2026-05-14 22:02:57,992 INFO nsa.learning.trainer: epoch=12 train_loss=0.0874 val_loss=0.1809 val_acc=0.950
+2026-05-14 22:03:31,216 INFO nsa.learning.trainer: epoch=13 train_loss=0.0870 val_loss=0.1812 val_acc=0.950
+2026-05-14 22:04:05,174 INFO nsa.learning.trainer: epoch=14 train_loss=0.0866 val_loss=0.1814 val_acc=0.950
+2026-05-14 22:04:37,339 INFO nsa.learning.trainer: epoch=15 train_loss=0.0862 val_loss=0.1817 val_acc=0.950
+2026-05-14 22:05:10,135 INFO nsa.learning.trainer: epoch=16 train_loss=0.0859 val_loss=0.1819 val_acc=0.950
+2026-05-14 22:05:43,131 INFO nsa.learning.trainer: epoch=17 train_loss=0.0856 val_loss=0.1822 val_acc=0.950
+2026-05-14 22:06:16,743 INFO nsa.learning.trainer: epoch=18 train_loss=0.0854 val_loss=0.1824 val_acc=0.950
+2026-05-14 22:06:50,500 INFO nsa.learning.trainer: epoch=19 train_loss=0.0852 val_loss=0.1826 val_acc=0.950
+2026-05-14 22:06:52,289 INFO regime2: final: test_loss=0.1111 test_acc=0.975 per_image_top1=0.038 recovered_n_states=5 recovered_equiv=True

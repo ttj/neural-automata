@@ -1,0 +1,11 @@
+#0 -> koz=accept | koz=accept: 0.0009779930114746094
+#1 -> hoz=accept | xoz=reject: 0.0008559226989746094
+#2 -> joz=accept | jog=reject: 0.0008521080017089844
+#3 -> toz=accept | toz=accept: 0.001596212387084961
+#4 -> ooz=accept | aoz=reject: 0.0007491111755371094
+#5 -> arfgbihg=reject | arfgblhg=reject: 0.018069982528686523
+#6 -> uchsksvsn=reject | uchgksvgn=reject: 0.007606029510498047
+#7 -> zuiy=reject | zuly=reject: 0.001024007797241211
+#8 -> dtv=reject | dtv=reject: 0.0010771751403808594
+#9 -> rqh=reject | rqh=reject: 0.0014140605926513672
+String Classification Accuracy: 40.0%, Task Accuracy: 70.0%

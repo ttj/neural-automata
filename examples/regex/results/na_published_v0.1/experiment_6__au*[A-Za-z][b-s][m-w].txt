@@ -1,0 +1,11 @@
+#0 -> auuuuuuucer=accept | auuuuuuucer=accept: 0.002801179885864258
+#1 -> auuuuuuuuuuuuuuusin=accept | auuuuucuuauuuuuusln=reject: 0.007341861724853516
+#2 -> auuuuuygp=accept | auuuuuyqp=accept: 0.002040863037109375
+#3 -> auuuuuuuuuuuuukho=accept | auuuuuuuvuuuuukho=reject: 0.005464076995849609
+#4 -> auuuuuuuuuuuuuuuuwen=accept | auuduuuuuuuuuuuuvwen=reject: 0.005550861358642578
+#5 -> tzgfhfm=reject | tzgfhfm=reject: 0.002338886260986328
+#6 -> x=reject | x=reject: 0.00032830238342285156
+#7 -> kzkzfgk=reject | kzkzfqk=reject: 0.0022821426391601562
+#8 -> yslhfhdn=reject | yslhfhdn=reject: 0.002499103546142578
+#9 -> t=reject | t=reject: 0.0002999305725097656
+String Classification Accuracy: 50.0%, Task Accuracy: 70.0%

@@ -1,11 +1,11 @@
-#0 -> hcj=accept | hcj=accept: 0.0010988712310791016
-#1 -> hct=accept | mct=reject: 0.0007500648498535156
-#2 -> hcp=accept | hcp=accept: 0.0007951259613037109
-#3 -> hce=accept | hce=accept: 0.0007519721984863281
-#4 -> hcj=accept | hcj=accept: 0.0008072853088378906
-#5 -> izcx=reject | izcx=reject: 0.0014410018920898438
-#6 -> iqhzrffdyq=reject | iqhzrffdyq=reject: 0.0030519962310791016
-#7 -> rxnbj=reject | rxnbj=reject: 0.0011909008026123047
-#8 -> l=reject | l=reject: 0.0003108978271484375
-#9 -> vzqce=reject | vzgce=reject: 0.0011839866638183594
+#0 -> hcj=accept | hcj=accept: 0.0017042160034179688
+#1 -> hct=accept | nct=reject: 0.001735687255859375
+#2 -> hcp=accept | hcp=accept: 0.0016968250274658203
+#3 -> hce=accept | hce=accept: 0.0016362667083740234
+#4 -> hcj=accept | hcj=accept: 0.0017404556274414062
+#5 -> izcx=reject | izcx=reject: 0.0022013187408447266
+#6 -> iqhzrffdyq=reject | lqhzrffdyq=reject: 0.005223512649536133
+#7 -> rxnbj=reject | rxnbj=reject: 0.00272369384765625
+#8 -> l=reject | l=reject: 0.0006289482116699219
+#9 -> vzqce=reject | vzqce=reject: 0.002721548080444336
 String Classification Accuracy: 80.0%, Task Accuracy: 90.0%

@@ -1,0 +1,50 @@
+# Half B / regime (2) configuration.
+#
+# Regime (2) trains the perception network AND the transition function
+# delta_theta jointly via the soft forward algorithm. delta_logits is
+# initialised from the hand-built DFA (warm start) and lightly
+# regularised toward peaky rows so the post-training discretisation
+# yields an interpretable DFA. The headline question: does the
+# recovered DFA at convergence match the hand-built reference (up to
+# isomorphism), and does sequence accuracy meet or beat regime (1)?
+
+regex: "[A-Za-z][A-Za-z]w"
+
+# Per-class sample counts; total per-split = 2 * this (balanced).
+num_train_per_class: 400      # -> 800 train examples
+num_val_per_class: 100        # -> 200 val examples
+num_test_per_class: 100       # -> 200 test examples
+
+# Held-out single-image EMNIST test set for per-image top-1 accuracy.
+per_image_n_per_class: 50      # -> 1300 single-image examples
+
+# Optimizer.
+optimizer: "Adam"
+learning_rate: 1.0e-3
+weight_decay: 0.0
+batch_accumulate: 16
+grad_clip_norm: 1.0
+
+# Training schedule.
+epochs: 20
+
+# Regime-(2) specifics:
+#   - learn_delta:        register delta_logits as nn.Parameter
+#   - delta_init:         "from_dfa" warm starts at the hand-built DFA;
+#                         "identity" / "uniform" are alternatives
+#   - delta_init_scale:   how peaky the warm-start logits are
+#                         (higher => closer to discrete one-hot)
+#   - regularizer_weights: dict of `{name: weight}`; see
+#                         nsa.learning.trainer.REGULARIZERS_BY_NAME
+learn_delta: true
+delta_init: "from_dfa"
+delta_init_scale: 5.0
+regularizer_weights:
+  row_entropy: 0.01
+
+# Reproducibility.
+seed: 42
+
+# Filesystem locations (relative to the repo root).
+emnist_root: "data/EMNIST"
+data_cache_dir: "experiments/halfb/regime1/_data_cache"  # shared with regime 1

@@ -1,0 +1,11 @@
+#0 -> mobooooooooooooo=accept | mobdoooooooooooo=reject: 0.007205009460449219
+#1 -> clcoooooooooooo=accept | clcoooooooooooo=accept: 0.003923892974853516
+#2 -> cwroooo=accept | cwroooo=accept: 0.0028998851776123047
+#3 -> fqbooooooooooooooo=accept | fqbooooooooooooooo=accept: 0.00567317008972168
+#4 -> abpoooooooooooo=accept | abpoooooooooooo=accept: 0.004627227783203125
+#5 -> sidzhgexh=reject | sldzhgexh=reject: 0.0023980140686035156
+#6 -> kmfl=reject | kmfl=reject: 0.0009860992431640625
+#7 -> ckarbct=reject | ckarbct=reject: 0.0025908946990966797
+#8 -> udltatzzi=reject | udltatzzi=reject: 0.0020868778228759766
+#9 -> xizrsvfz=reject | xizrsvfz=reject: 0.002192258834838867
+String Classification Accuracy: 80.0%, Task Accuracy: 90.0%

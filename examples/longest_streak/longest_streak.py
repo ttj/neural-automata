@@ -1,89 +1,125 @@
-import neutron.automata as N
-from neutron.mode import Mode, MS
-from neutron.state import State
-from neutron.transition import Transition, TS
+"""Longest-streak example: a pure symbolic FiniteAutomaton with no perception.
 
-# Transition functions
-# TODO: Refactor transitions, so that there are no longer individual transitions
-#       and instead the transitions are modeled by functions in the TS.
+This is the smallest entry point in the project. It demonstrates:
 
-def m1m2(N):
-    """N is a reference to the automaton."""
-    states = N.S
-    states.y = max(states.x, states.y)
-    states.x = 1
-    N.current_mode = N.M.Letters
-    return
+  - constructing a `FiniteAutomaton` by hand (no regex compilation),
+  - stepwise execution via `FiniteAutomaton.step`,
+  - tracking an accumulator alongside the symbolic state.
 
-def m2m1(N):
-    states = N.S
-    states.y = max(states.x, states.y)
-    states.x = 1
-    N.current_mode = N.M.Digits 
-    return
+There is no neural network: the input is a string of characters. Each
+character is classified as `'d'` (digit) or `'l'` (letter) by a tiny
+Python helper, then fed to the FA. The FA's state is "what we just
+saw"; transitions reveal whether the current input *continues* the
+prior streak or *starts a new one*. The longest streak across the
+entire input is tracked as an external accumulator.
 
-def m1m1(N):
-    states = N.S
-    states.y = max(states.x, states.y)
-    states.x += 1
-    N.current_mode = N.M.Digits 
-    return
+Run from the repository root:
 
-def m2m2(N):
-    states = N.S
-    states.y = max(states.x, states.y)
-    states.x += 1
-    N.current_mode = N.M.Letters
-    return
+    python -m examples.longest_streak.longest_streak
 
-class LongestStreakAutomaton(N.Neutron):
-    
-    def move(self, x) -> Transition:
-        if self.nn:
-            res = self.nn(x)
+For a perception-driven example, see `examples/regex/regex.py`. For
+the NSPDA arithmetic walkthrough, see `examples/simple_math/`.
+"""
+
+from automata.fa.dfa import DFA
+
+from nsa import FiniteAutomaton
+from nsa.alphabet import Alphabet
+
+
+def build_class_fa() -> FiniteAutomaton:
+    """A 2-state FA over the alphabet {'d', 'l'} (digit / letter).
+
+    Both states are accepting -- the FA "accepts" any string. The
+    purpose is to observe the state at each step, not to make an
+    accept / reject decision.
+    """
+    alphabet = Alphabet(["d", "l"])
+    dfa = DFA(
+        states={"Digit", "Letter"},
+        input_symbols={"d", "l"},
+        transitions={
+            "Digit": {"d": "Digit", "l": "Letter"},
+            "Letter": {"d": "Digit", "l": "Letter"},
+        },
+        initial_state="Digit",
+        final_states={"Digit", "Letter"},
+    )
+    return FiniteAutomaton(dfa, alphabet=alphabet)
+
+
+def classify(c: str) -> str:
+    """Map a single ASCII alphanumeric character to its FA-input symbol."""
+    if c.isdigit():
+        return "d"
+    if c.isalpha():
+        return "l"
+    raise ValueError(
+        f"input {c!r} is neither a digit nor a letter; skip "
+        "non-alphanumeric inputs before calling classify"
+    )
+
+
+def longest_streak(text: str) -> tuple[int, list[tuple[str, str, int]]]:
+    """Return the longest streak of consecutive digits-or-letters in `text`.
+
+    Args:
+        text: An input string. Non-alphanumeric characters are
+            ignored.
+
+    Returns:
+        A tuple `(longest, trace)` where `longest` is the maximum
+        same-class streak length seen, and `trace` is a list of
+        `(input_char, fa_state_after, running_streak_length)` triples
+        for every alphanumeric input -- useful for printing or
+        teaching.
+    """
+    fa = build_class_fa()
+    state = fa.q0
+    prev_state: str | None = None
+    current = 0
+    longest = 0
+    trace: list[tuple[str, str, int]] = []
+
+    for c in text:
+        if not c.isalnum():
+            continue
+        symbol = classify(c)
+        state = fa.step(state, symbol)
+        if state == prev_state:
+            current += 1
         else:
-            res = 0 if x.isnumeric() else 1
+            current = 1
+            prev_state = state
+        longest = max(longest, current)
+        trace.append((c, state, current))
 
-        if self.current_mode == self.M.Digits and res == 1:
-            return self.T.m1m2
-        elif self.current_mode == self.M.Digits and res == 0:
-            return self.T.m1m1
-        elif self.current_mode == self.M.Letters and res == 0:
-            return self.T.m2m1
-        else:
-            # self.current_mode == self.M.Letters and res == 1
-            return self.T.m2m2
+    return longest, trace
+
+
+def main() -> None:
+    """Print a worked example. Edit `examples` to try other inputs."""
+    examples = [
+        "abcd1234",
+        "a1b2c3d4",
+        "aaaa1111bbbb",
+        "X9Y8Z7Q6",
+        "hello123world456",
+    ]
+
+    fa = build_class_fa()
+    print(f"FA states: {set(fa.dfa.states)}")
+    print(f"FA alphabet: {set(fa.alphabet)}")
+    print(f"FA initial state: {fa.q0}")
+    print(f"FA accepting states: {fa.F}\n")
+
+    for text in examples:
+        longest, trace = longest_streak(text)
+        print(f"input: {text!r}")
+        for c, state, running in trace:
+            print(f"  {c!r}  -> state={state:<6} streak={running}")
+        print(f"  longest streak: {longest}\n")
 
 
 if __name__ == "__main__":
-    # Modes
-    mode1 = Mode(name='Digits', nn=None, initial=True)
-    mode2 = Mode(name='Letters', nn=None)
-    modes = [mode1, mode2]
-    ms = MS(modes)
-
-    # States
-    ss = State({'x': 0, 'y': 0})
-
-    # Transitions
-    t1 = Transition(mode1, mode2, m1m2, id='m1m2')
-    t2 = Transition(mode2, mode1, m2m1, id='m2m1')
-    t3 = Transition(mode1, mode1, m1m1, id='m1m1')
-    t4 = Transition(mode2, mode2, m2m2, id='m2m2')
-    transitions = [t1, t2, t3, t4]
-    ts = TS(transitions)
-
-    # Neutron
-    nn = None
-    N = LongestStreakAutomaton(nn, ms, ts, ss)
-
-    # Use the automaton
-    print(f'Mode: {N.current_mode}, starting state: ' + ', '.join([f'{attr} : {value}' for attr, value in N.S.__dict__.items()]))
-    while True:
-        x = input('Enter a letter or digit.\n')
-        output = f'Mode: {N.current_mode}, ' + ', '.join([f'{attr} : {value}' for attr, value in N.S.__dict__.items()])
-        N.step(x)
-        output += ' --> '
-        output += f'Mode: {N.current_mode}, ' + ', '.join([f'{attr} : {value}' for attr, value in N.S.__dict__.items()])
-        output += '\n'
-        print(output)
+    main()

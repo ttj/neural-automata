@@ -1,0 +1,11 @@
+#0 -> uuuuqqgslb=accept | uuuuqqqslb=accept: 0.005323171615600586
+#1 -> uuuuuukrwvlu=accept | uunuuylrwviu=reject: 0.0037937164306640625
+#2 -> uuuuuuuuoqmflw=accept | uuuuuuuuogmflw=reject: 0.004145145416259766
+#3 -> uuuuuuulipnlu=accept | uuuuuuunipnlv=accept: 0.005197048187255859
+#4 -> uuuuuuuuuuuuuunlhwlt=accept | uuuuuuuuwuuuuunlhwlt=reject: 0.006209135055541992
+#5 -> gbpwpzz=reject | gbpwpzz=reject: 0.004576921463012695
+#6 -> ik=reject | lk=reject: 0.0007200241088867188
+#7 -> meufnyjpxp=reject | mtlfnyjpxp=reject: 0.002313852310180664
+#8 -> f=reject | f=reject: 0.0003330707550048828
+#9 -> ynmhelipao=reject | gnmhehlpao=reject: 0.002428770065307617
+String Classification Accuracy: 20.0%, Task Accuracy: 70.0%
